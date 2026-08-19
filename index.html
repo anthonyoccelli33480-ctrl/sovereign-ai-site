@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign IA — Intégrateur IA pour PME et artisans en Gironde</title>
+<meta name="description" content="Sovereign IA installe l'IA utile chez les TPE, PME et artisans : automatisations, agents supervisés en local, visibilité dans les moteurs de réponse. Vos données restent chez vous. Gironde, Médoc, et à distance partout en France.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sovereign IA — L'IA utile pour PME et artisans">
+<meta property="og:description" content="Automatisations et agents supervisés, installés chez vous. Vos données restent chez vous, vous validez avant chaque envoi. Gironde & Médoc.">
+<meta property="og:url" content="https://sovereign-ai.tech">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0D10'/%3E%3Cpath d='M6 21 L6 12 L11 16.5 L16 9 L21 16.5 L26 12 L26 21 Z M6 23.5 L26 23.5' fill='none' stroke='%23C9A65B' stroke-width='1.5' stroke-linejoin='miter'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Sovereign IA",
+  "description": "Intégrateur IA pour TPE, PME et artisans : intégration IA sur mesure, automatisation métier, agents locaux supervisés et visibilité dans les moteurs de réponse (GEO). Les modèles tournent chez le client, les données restent chez lui, l'humain valide avant chaque envoi. Basé dans le Médoc, en Gironde — interventions sur place et à distance partout en France.",
+  "url": "https://sovereign-ai.tech",
+  "email": "anthony@sovereign-ai.tech",
+  "founder": {
+    "@type": "Person",
+    "name": "Anthony Occelli"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Gironde" },
+    { "@type": "AdministrativeArea", "name": "Médoc" },
+    { "@type": "Country", "name": "France" }
+  ],
+  "sameAs": [
+    "https://github.com/anthonyoccelli33480-ctrl"
+  ],
+  "knowsAbout": [
+    "intégration d'intelligence artificielle pour PME",
+    "automatisation de tâches administratives pour artisans",
+    "agents IA locaux supervisés",
+    "visibilité dans les moteurs de réponse (GEO)"
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   SOVEREIGN IA — l'atelier d'instruments
+   Palette imposée. Gold : 3 zones (couronne, Assist'OS, bascule).
+   ============================================================ */
+
+:root{
+  --graphite-deep:#0B0D10;
+  --graphite:#15181D;
+  --ivory:#F4F5F7;
+  --cyan:#00E5FF;
+  --gold:#C9A65B;
+  --hairline:rgba(244,245,247,0.08);
+  --hairline-strong:rgba(244,245,247,0.16);
+  --ivory-dim:rgba(244,245,247,0.62);
+  --ivory-faint:rgba(244,245,247,0.52); /* 5.2:1 sur graphite-deep — AA petit texte */
+  --cyan-dim:rgba(0,229,255,0.12);
+  --gold-hairline:rgba(201,166,91,0.28);
+  --font-display:'Satoshi','Avenir Next','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --maxw:1100px;
+  --pad:clamp(1.25rem,4vw,2.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  background:var(--graphite-deep);
+  color:var(--ivory);
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ---- matière : grain + halos radiaux ---- */
+.grain{
+  position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.028;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- règle de mesure (desktop) ---- */
+.rule{
+  position:fixed;left:26px;top:0;bottom:0;width:14px;z-index:10;
+  display:none;
+}
+@media (min-width:1240px){.rule{display:block}}
+.rule::before{
+  content:"";position:absolute;left:6px;top:0;bottom:0;width:1px;
+  background:var(--hairline);
+}
+.rule .ticks{
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(to bottom,var(--hairline-strong) 0 1px,transparent 1px 64px);
+  background-position:0 32px;background-size:7px 64px;background-repeat:repeat-y;
+}
+.rule .cursor{
+  position:absolute;left:0;width:13px;height:1px;background:var(--cyan);top:0;
+}
+
+/* ---- structure ---- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{padding:clamp(5rem,11vh,8.5rem) 0}
+.section-head{margin-bottom:clamp(2.5rem,6vh,4rem)}
+
+.kicker{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ivory-faint);
+  display:block;margin-bottom:1.1rem;
+}
+h2{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(1.7rem,4vw,2.7rem);letter-spacing:-0.03em;line-height:1.12;
+}
+h3{font-family:var(--font-display);font-weight:700;font-size:1.12rem;letter-spacing:-0.01em}
+
+a{color:var(--ivory)}
+a:hover{color:var(--cyan)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:2px}
+::selection{background:rgba(0,229,255,.25)}
+
+/* ---- header ---- */
+header{
+  padding:1.6rem 0;border-bottom:1px solid var(--hairline);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.brand:hover{color:var(--ivory)}
+.brand .crown{flex:none}
+.brand .word{
+  font-family:var(--font-display);font-weight:700;font-size:1rem;letter-spacing:.02em;
+}
+.brand .word small{
+  display:block;font-family:var(--font-mono);font-weight:400;font-size:.6rem;
+  letter-spacing:.22em;color:var(--ivory-faint);text-transform:uppercase;margin-top:.1rem;
+}
+nav a{
+  font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ivory-dim);text-decoration:none;margin-left:1.6rem;
+}
+nav a:hover{color:var(--cyan)}
+@media (max-width:560px){nav a:first-child{display:none}}
+
+/* ---- hero ---- */
+.hero{padding:clamp(4.5rem,12vh,8.5rem) 0 clamp(4rem,10vh,7rem);position:relative}
+.hero h1{
+  font-family:var(--font-display);font-weight:900;
+  font-size:clamp(2.5rem,6.8vw,4.9rem);line-height:1.03;letter-spacing:-0.042em;
+  max-width:15ch;
+}
+.hero h1 .l2{display:block;color:var(--ivory-dim);font-weight:700;letter-spacing:-0.035em}
+.hero .sub{
+  margin-top:1.8rem;max-width:52ch;color:var(--ivory-dim);font-size:1.06rem;
+}
+.hero .sub strong{color:var(--ivory);font-weight:500}
+
+/* journal de supervision */
+.journal{
+  margin-top:3.2rem;max-width:560px;
+  border:1px solid var(--hairline);background:var(--graphite);
+  padding:1.4rem 1.5rem 1.2rem;
+  font-family:var(--font-mono);font-size:.8rem;line-height:2.05;
+  position:relative;
+}
+.journal::after{
+  content:"";position:absolute;inset:-40px 0;z-index:-1;
+  background:radial-gradient(90% 70% at 30% 50%,rgba(0,229,255,.05),transparent 65%);
+}
+.journal .jl{
+  display:flex;gap:.9rem;opacity:0;transform:translateY(4px);
+  transition:opacity .5s ease,transform .5s ease;
+  white-space:nowrap;
+}
+.journal .jl>span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.journal .jl.on{opacity:1;transform:none}
+.journal .jt{color:var(--ivory-faint);flex:none}
+.journal .jl-machine{color:var(--cyan)}
+.journal .jl-wait{color:var(--ivory)}
+.journal .jl-wait .dot{
+  display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:var(--ivory);margin-right:.5rem;vertical-align:1px;
+  animation:pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.journal .jl-human{color:var(--ivory)}
+.journal .jl-human .ok{color:var(--cyan)}
+.journal .jcap{
+  margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--hairline);
+  font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory-faint);
+}
+@media (max-width:640px){.journal{font-size:.68rem;padding:1.1rem 1rem 1rem}}
+
+/* CTA */
+.cta-row{margin-top:2.6rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.btn{
+  display:inline-block;font-family:var(--font-display);font-weight:700;font-size:.95rem;
+  letter-spacing:.01em;color:var(--graphite-deep);background:var(--ivory);
+  padding:.95rem 1.9rem;text-decoration:none;border:1px solid var(--ivory);
+  transition:background .2s ease,color .2s ease;
+}
+.btn:hover{background:var(--cyan);border-color:var(--cyan);color:var(--graphite-deep)}
+.link-quiet{
+  font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;
+  color:var(--ivory-dim);text-decoration:none;border-bottom:1px solid var(--hairline-strong);
+  padding-bottom:2px;
+}
+.link-quiet:hover{color:var(--cyan);border-color:var(--cyan)}
+
+/* séquence d'entrée */
+.h-in{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.22,.7,.3,1),transform .7s cubic-bezier(.22,.7,.3,1)}
+html.is-loaded .h-in{opacity:1;transform:none}
+.h-in.d1{transition-delay:.12s}
+.h-in.d2{transition-delay:.24s}
+.h-in.d3{transition-delay:.4s}
+.h-in.d4{transition-delay:.6s}
+.h-in.d5{transition-delay:.74s}
+
+/* ---- reveals au scroll (sections seulement) ---- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.reveal.is-vis{opacity:1;transform:none}
+
+/* ---- piliers : l'éventail ---- */
+.pillars-rail{
+  border-top:1px solid var(--hairline-strong);
+  padding-top:.8rem;margin-bottom:2.4rem;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ivory-faint);
+}
+.pillars{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--hairline);border:1px solid var(--hairline);
+}
+@media (max-width:980px){.pillars{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.pillars{grid-template-columns:1fr}}
+.pillar{
+  background:var(--graphite-deep);padding:1.8rem 1.5rem 2rem;
+  border-top:1px solid transparent;
+  transition:border-color .25s ease,transform .25s ease,background .25s ease;
+}
+.pillar:hover{border-top-color:var(--cyan);transform:translateY(-2px);background:var(--graphite)}
+.pillar svg{display:block;margin-bottom:1.2rem}
+.pillar h3{margin-bottom:.6rem}
+.pillar p{font-size:.88rem;color:var(--ivory-dim);line-height:1.6}
+
+/* ---- calculateur : l'instrument ---- */
+.calc-section{position:relative}
+.calc-halo{
+  position:absolute;inset:-10% 0;z-index:-1;pointer-events:none;
+  background:radial-gradient(90% 60% at 50% 45%,rgba(0,229,255,.04),transparent 60%);
+  transition:opacity .9s ease;opacity:1;
+}
+.calc-section.is-hot .calc-halo{
+  background:radial-gradient(90% 60% at 50% 45%,rgba(0,229,255,.09),transparent 62%);
+}
+.instrument{
+  border:1px solid var(--hairline-strong);background:var(--graphite);
+  display:grid;grid-template-columns:1fr 340px;
+}
+/* anti grid-blowout : aucun item de grille ne peut imposer sa min-content */
+.instrument>*,.scene>*,.pillars>*,.facts>*,.work>*,.task-controls>*,.contact-grid>*{min-width:0}
+@media (max-width:900px){.instrument{grid-template-columns:1fr}}
+
+.calc-left{padding:clamp(1.4rem,3vw,2.4rem);border-right:1px solid var(--hairline)}
+@media (max-width:900px){.calc-left{border-right:none;border-bottom:1px solid var(--hairline)}}
+
+.calc-label{
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ivory-faint);display:block;margin-bottom:.55rem;
+}
+
+/* ajout de tâche */
+.task-add{display:flex;gap:.6rem;margin-bottom:1rem}
+.task-add input[type=text]{
+  flex:1;min-width:0;background:var(--graphite-deep);border:1px solid var(--hairline-strong);
+  color:var(--ivory);font-family:var(--font-body);font-size:.92rem;
+  padding:.7rem .9rem;
+}
+.task-add input[type=text]::placeholder{color:var(--ivory-faint)}
+.task-add button{
+  background:transparent;border:1px solid var(--hairline-strong);color:var(--ivory);
+  font-family:var(--font-mono);font-size:.78rem;padding:.7rem 1.1rem;cursor:pointer;
+  letter-spacing:.06em;transition:border-color .2s,color .2s;
+}
+.task-add button:hover{border-color:var(--cyan);color:var(--cyan)}
+
+.suggests{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.8rem}
+.suggests button{
+  background:transparent;border:1px solid var(--hairline);color:var(--ivory-dim);
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.04em;
+  padding:.42rem .8rem;cursor:pointer;transition:all .2s ease;
+}
+.suggests button:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-dim)}
+.suggests button[disabled]{opacity:.3;cursor:default}
+.suggests button[disabled]:hover{border-color:var(--hairline);color:var(--ivory-dim);background:transparent}
+
+/* registre des tâches */
+.task{
+  border-top:1px solid var(--hairline);padding:1.2rem 0 1.35rem;
+}
+.task-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.9rem}
+.task-name{font-family:var(--font-display);font-weight:700;font-size:1rem;letter-spacing:-.01em}
+.task-del{
+  background:none;border:none;color:var(--ivory-faint);cursor:pointer;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;padding:.2rem .3rem;
+}
+.task-del:hover{color:var(--ivory)}
+.task-controls{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+@media (max-width:620px){.task-controls{grid-template-columns:1fr;gap:1rem}}
+.ctrl label{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ivory-faint);margin-bottom:.45rem;
+}
+.ctrl output{color:var(--cyan);font-size:.8rem;font-variant-numeric:tabular-nums}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:34px;
+  background:transparent;cursor:pointer;
+}
+input[type=range]::-webkit-slider-runnable-track{
+  height:2px;background:var(--hairline-strong);
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;
+  background:var(--graphite-deep);border:2px solid var(--cyan);margin-top:-8px;
+}
+input[type=range]::-moz-range-track{height:2px;background:var(--hairline-strong)}
+input[type=range]::-moz-range-thumb{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--graphite-deep);border:2px solid var(--cyan);
+}
+.cap-note{
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.05em;
+  color:var(--ivory-faint);margin-top:.3rem;
+}
+
+/* taux horaire */
+.rate-row{
+  display:flex;align-items:center;gap:.9rem;margin-top:1.6rem;
+  border-top:1px solid var(--hairline);padding-top:1.4rem;
+}
+.rate-row label{
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ivory-faint);
+}
+.rate-row input{
+  width:90px;background:var(--graphite-deep);border:1px solid var(--hairline-strong);
+  color:var(--cyan);font-family:var(--font-mono);font-size:.95rem;
+  font-variant-numeric:tabular-nums;padding:.55rem .7rem;text-align:right;
+}
+.rate-row .unit{font-family:var(--font-mono);font-size:.78rem;color:var(--ivory-dim)}
+
+/* cadran de résultat */
+.calc-right{padding:clamp(1.4rem,3vw,2.4rem);display:flex;flex-direction:column}
+.dial{flex:1}
+.dial-row{margin-bottom:1.6rem}
+.dial-row .num{
+  font-family:var(--font-mono);font-weight:500;font-variant-numeric:tabular-nums;
+  font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.1;color:var(--cyan);
+  letter-spacing:-.02em;
+}
+.dial-row .num .u{font-size:.55em;color:var(--ivory-dim);margin-left:.15em}
+.dial-row .lbl{
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ivory-faint);margin-top:.3rem;
+}
+.dial-sub{
+  font-family:var(--font-mono);font-size:.78rem;color:var(--ivory-dim);
+  font-variant-numeric:tabular-nums;
+}
+.dial-empty{color:var(--ivory-dim);font-size:.92rem;line-height:1.6}
+.dial-empty .dash{
+  font-family:var(--font-mono);font-size:2.4rem;color:var(--ivory-faint);
+  display:block;margin-bottom:.8rem;
+}
+
+/* bascule gold — le cadre se pose, sans transition */
+.verdict{
+  display:none;margin-top:.4rem;margin-bottom:1.4rem;
+  border:1px solid var(--gold);padding:1rem 1.1rem;
+}
+.calc-section.is-hot .verdict{display:block}
+.verdict p{
+  font-family:var(--font-display);font-weight:700;font-size:.98rem;
+  color:var(--gold);letter-spacing:-.01em;line-height:1.4;
+}
+.calc-cta{margin-top:auto;padding-top:1.2rem;border-top:1px solid var(--hairline)}
+.calc-cta .btn{width:100%;text-align:center;padding:.9rem 1rem}
+.calc-cta .note{
+  font-family:var(--font-mono);font-size:.62rem;color:var(--ivory-faint);
+  margin-top:.7rem;letter-spacing:.04em;line-height:1.7;
+}
+
+/* ---- Assist'OS : zone gold ---- */
+.assistos{position:relative;border-top:1px solid var(--gold-hairline);border-bottom:1px solid var(--gold-hairline)}
+.assistos::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 20%,rgba(201,166,91,.05),transparent 55%);
+}
+.assistos .seal{
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.1rem;
+}
+.assistos h2{max-width:22ch}
+.assistos .lede{margin-top:1.2rem;max-width:56ch;color:var(--ivory-dim);font-size:1.02rem}
+
+/* la scène */
+.scene{
+  margin-top:3rem;border:1px solid var(--gold-hairline);background:var(--graphite);
+  display:grid;grid-template-columns:1fr 1.4fr 1fr;
+}
+@media (max-width:900px){.scene{grid-template-columns:1fr}}
+.panel{padding:1.5rem 1.4rem 1.7rem;border-right:1px solid var(--hairline)}
+.panel:last-child{border-right:none}
+@media (max-width:900px){
+  .panel{border-right:none;border-bottom:1px solid var(--hairline)}
+  .panel:last-child{border-bottom:none}
+}
+.panel .p-tag{
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ivory-faint);display:block;margin-bottom:1.1rem;
+}
+
+/* panneau 1 : vault */
+.doc{
+  font-family:var(--font-mono);font-size:.74rem;color:var(--ivory-dim);
+  border:1px solid var(--hairline);padding:.6rem .75rem;margin-bottom:.5rem;
+  transition:border-color .4s ease,color .4s ease,background .4s ease;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.doc.lit{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-dim)}
+.vault-note{font-family:var(--font-mono);font-size:.62rem;color:var(--ivory-faint);margin-top:.9rem;line-height:1.7}
+
+/* panneau 2 : le mail */
+.mail{font-size:.85rem;line-height:1.75}
+.mail .m-meta{
+  font-family:var(--font-mono);font-size:.68rem;color:var(--ivory-faint);
+  border-bottom:1px solid var(--hairline);padding-bottom:.7rem;margin-bottom:.9rem;
+  line-height:1.9;
+}
+.mail .m-meta strong{color:var(--ivory-dim);font-weight:500}
+.mail .ml{
+  opacity:0;transform:translateY(3px);
+  transition:opacity .45s ease,transform .45s ease;color:var(--ivory-dim);
+}
+.mail .ml.on{opacity:1;transform:none}
+.mail .ml em{color:var(--cyan);font-style:normal}
+
+/* panneau 3 : la main du patron */
+.approve{display:flex;flex-direction:column;gap:1.1rem;height:100%}
+.status{
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--hairline-strong);padding:.75rem .9rem;color:var(--ivory-faint);
+  transition:border-color .4s ease,color .4s ease;
+}
+.scene.st-wait .status{border-color:var(--ivory);color:var(--ivory)}
+.scene.st-sent .status{border-color:var(--cyan);color:var(--cyan)}
+.approve .hint{font-size:.85rem;color:var(--ivory-dim);line-height:1.65}
+.approve .hint strong{color:var(--ivory);font-weight:500}
+.replay{
+  align-self:flex-start;margin-top:auto;background:none;cursor:pointer;
+  border:1px solid var(--hairline-strong);color:var(--ivory-dim);
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.55rem 1rem;transition:border-color .2s,color .2s;
+}
+.replay:hover{border-color:var(--cyan);color:var(--cyan)}
+
+.scene-cap{
+  margin-top:1.6rem;font-family:var(--font-display);font-weight:700;
+  font-size:clamp(1.05rem,2.2vw,1.3rem);letter-spacing:-.015em;max-width:40ch;
+}
+.scene-cap .gold{color:var(--gold)}
+
+/* faits vérifiés */
+.facts{
+  margin-top:3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--gold-hairline);border:1px solid var(--gold-hairline);
+}
+@media (max-width:900px){.facts{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.facts{grid-template-columns:1fr}}
+.fact{background:var(--graphite-deep);padding:1.4rem 1.3rem 1.5rem}
+.fact .f-k{
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.55rem;
+}
+.fact p{font-size:.86rem;color:var(--ivory-dim);line-height:1.6}
+
+.curious{margin-top:1.6rem;max-width:70ch}
+.curious summary{
+  cursor:pointer;font-family:var(--font-mono);font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ivory-faint);
+  list-style:none;
+}
+.curious summary::before{content:"+ ";color:var(--gold)}
+.curious[open] summary::before{content:"− "}
+.curious summary::-webkit-details-marker{display:none}
+.curious p{
+  margin-top:.9rem;font-size:.85rem;color:var(--ivory-dim);line-height:1.75;
+  border-left:1px solid var(--gold-hairline);padding-left:1.1rem;
+}
+.curious code{font-family:var(--font-mono);font-size:.92em;color:var(--ivory)}
+
+/* ---- autres travaux ---- */
+.works{border-top:1px solid var(--hairline)}
+.work{
+  display:grid;grid-template-columns:200px 1fr auto;gap:1.5rem;align-items:baseline;
+  border-bottom:1px solid var(--hairline);padding:1.5rem 0;
+  transition:background .2s ease;
+}
+.work:hover{background:var(--graphite)}
+@media (max-width:720px){.work{grid-template-columns:1fr;gap:.4rem;padding:1.3rem 0}}
+.work h3{font-size:1.05rem}
+.work p{font-size:.88rem;color:var(--ivory-dim)}
+.work .w-meta{
+  font-family:var(--font-mono);font-size:.68rem;color:var(--ivory-faint);
+  letter-spacing:.05em;white-space:nowrap;
+}
+.work a{color:inherit;text-decoration:none}
+.work a:hover{color:var(--cyan)}
+
+/* ---- méthode ---- */
+.method{max-width:640px}
+.step{
+  display:grid;grid-template-columns:56px 1fr;gap:1.4rem;
+  padding:1.5rem 0;border-left:1px solid var(--hairline-strong);
+  padding-left:1.6rem;position:relative;
+}
+.step::before{
+  content:"";position:absolute;left:-3.5px;top:2.15rem;width:6px;height:6px;
+  border-radius:50%;background:var(--graphite-deep);border:1px solid var(--cyan);
+}
+.step .n{
+  font-family:var(--font-mono);font-size:.85rem;color:var(--cyan);
+  font-variant-numeric:tabular-nums;padding-top:.15rem;
+}
+.step h3{margin-bottom:.35rem}
+.step p{font-size:.9rem;color:var(--ivory-dim)}
+
+/* ---- contact ---- */
+.contact{border-top:1px solid var(--hairline)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+@media (max-width:720px){.contact-grid{grid-template-columns:1fr;gap:2rem}}
+.contact h2{max-width:14ch}
+.c-lines{font-size:.95rem;line-height:2.3}
+.c-lines .c-k{
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ivory-faint);display:inline-block;width:110px;
+}
+.c-lines a{text-decoration:none;border-bottom:1px solid var(--hairline-strong)}
+.c-lines a:hover{border-color:var(--cyan)}
+
+footer{
+  border-top:1px solid var(--hairline);padding:2rem 0 2.6rem;
+  font-family:var(--font-mono);font-size:.68rem;color:var(--ivory-faint);
+  letter-spacing:.05em;
+}
+footer .f-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+/* lisible par lecteur d'écran uniquement */
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* ---- reduced motion : tout à l'état final ---- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .h-in,.reveal{opacity:1!important;transform:none!important}
+  .journal .jl{opacity:1;transform:none}
+  .rule .cursor{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="rule" aria-hidden="true">
+  <div class="ticks"></div>
+  <div class="cursor" id="ruleCursor"></div>
+</div>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="#" aria-label="Sovereign IA — accueil">
+      <!-- Couronne — gold, trait fin, pas de remplissage (usage gold 1/3) -->
+      <svg class="crown" width="34" height="26" viewBox="0 0 34 26" fill="none" aria-hidden="true">
+        <path d="M4 17 L4 6 L10.5 12 L17 3 L23.5 12 L30 6 L30 17 Z" stroke="#C9A65B" stroke-width="1.25" stroke-linejoin="miter"/>
+        <path d="M4 21 L30 21" stroke="#C9A65B" stroke-width="1.25"/>
+      </svg>
+      <span class="word">Sovereign IA<small>Intégrateur IA · Médoc</small></span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="#calculateur">Calculateur</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <h1 id="hero-title">
+      <span class="h-in">L'IA utile.</span>
+      <span class="l2 h-in d1">Les automatisations qui font avancer votre entreprise.</span>
+    </h1>
+    <p class="sub h-in d2">
+      Pour les <strong>TPE, PME et artisans</strong> — installées chez vous, sur vos données,
+      avec votre validation avant chaque envoi. Basé dans le <strong>Médoc, en Gironde</strong>,
+      j'interviens sur place et à distance partout en France.
+    </p>
+
+    <!-- Le journal de supervision : reconstitution d'un cycle réel d'Assist'OS -->
+    <div class="journal h-in d3" id="journal" aria-label="Reconstitution d'un cycle de travail supervisé">
+      <div class="jl jl-machine" data-j="0"><span class="jt">09:12</span><span>demande SAV reçue — fuite sur vanne d'adoucisseur</span></div>
+      <div class="jl jl-machine" data-j="1"><span class="jt">09:12</span><span>fiche client lue · garantie vérifiée · tarif retrouvé</span></div>
+      <div class="jl jl-wait" data-j="2"><span class="jt">&nbsp;</span><span><span class="dot" aria-hidden="true"></span>en attente de votre validation</span></div>
+      <div class="jl jl-human" data-j="3"><span class="jt">09:13</span><span>validée par vos soins — <span class="ok">envoyée</span></span></div>
+      <div class="jcap">— reconstitution d'un cycle réel · la machine propose, vous tranchez —</div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn h-in d4" href="mailto:anthony@sovereign-ai.tech?subject=Parlons%20de%20mon%20entreprise">Discuter de votre cas</a>
+      <a class="link-quiet h-in d5" href="#calculateur">→ Chiffrez le temps que vous perdez</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PILIERS ============ -->
+<section aria-labelledby="pillars-title" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Ce que je fais</span>
+      <h2 id="pillars-title">Quatre terrains, une seule règle.</h2>
+    </div>
+    <p class="pillars-rail">vos données restent chez vous — sur chacun de ces quatre terrains</p>
+    <div class="pillars">
+      <article class="pillar">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="3" y="3" width="10" height="10" stroke="#00E5FF" stroke-width="1.25"/><rect x="17" y="17" width="10" height="10" stroke="#00E5FF" stroke-width="1.25"/><path d="M13 8 H22 V17 M8 13 V22 H17" stroke="rgba(244,245,247,.4)" stroke-width="1.25"/></svg>
+        <h3>Intégration IA sur mesure</h3>
+        <p>Connecter l'IA aux outils que vous utilisez déjà — devis, mails, planning — et à vos propres documents. Pas un logiciel de plus : vos habitudes, en plus rapide.</p>
+      </article>
+      <article class="pillar">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="11" stroke="rgba(244,245,247,.4)" stroke-width="1.25"/><path d="M15 8 V15 L20 18" stroke="#00E5FF" stroke-width="1.25"/></svg>
+        <h3>Automatisation métier</h3>
+        <p>Relances, factures, saisies, transferts entre outils : la paperasse qui se fait toute seule, pendant que vous êtes sur le chantier ou en clientèle.</p>
+      </article>
+      <article class="pillar">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 3 L26 8 V15 C26 21 21.5 25.5 15 27 C8.5 25.5 4 21 4 15 V8 Z" stroke="rgba(244,245,247,.4)" stroke-width="1.25"/><path d="M10.5 15 L13.8 18.3 L19.8 11.8" stroke="#00E5FF" stroke-width="1.25"/></svg>
+        <h3>Agents locaux supervisés</h3>
+        <p>Le modèle tourne sur votre machine, pas dans un cloud. L'agent prépare le travail, vous validez avant chaque action. Rien ne part sans votre main.</p>
+      </article>
+      <article class="pillar">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="8" stroke="rgba(244,245,247,.4)" stroke-width="1.25"/><path d="M19 19 L26 26" stroke="#00E5FF" stroke-width="1.25"/><path d="M10 13 H16 M13 10 V16" stroke="#00E5FF" stroke-width="1.25"/></svg>
+        <h3>Visibilité web &amp; GEO</h3>
+        <p>Vos futurs clients posent leurs questions à ChatGPT ou Google. Je fais en sorte que la réponse, ce soit vous — site, fiches, données structurées.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULATEUR ============ -->
+<section id="calculateur" class="calc-section reveal" aria-labelledby="calc-title">
+  <div class="calc-halo" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">L'instrument</span>
+      <h2 id="calc-title">Combien vous coûtent vos soirées de paperasse&nbsp;?</h2>
+    </div>
+
+    <div class="instrument">
+      <div class="calc-left">
+        <span class="calc-label" id="add-label">Vos tâches répétitives</span>
+        <form class="task-add" id="taskForm">
+          <input type="text" id="taskInput" aria-labelledby="add-label" placeholder="Ex. : rédiger les devis" maxlength="60" autocomplete="off">
+          <button type="submit">Ajouter</button>
+        </form>
+        <div class="suggests" id="suggests" role="group" aria-label="Suggestions de tâches">
+          <button type="button" data-task="Devis">devis</button>
+          <button type="button" data-task="Relances clients">relances clients</button>
+          <button type="button" data-task="Factures">factures</button>
+          <button type="button" data-task="Prise de RDV">prise de RDV</button>
+          <button type="button" data-task="Réponses mail">réponses mail</button>
+          <button type="button" data-task="Saisie compta">saisie compta</button>
+        </div>
+
+        <div id="taskList"></div>
+
+        <div class="rate-row">
+          <label for="rate">Votre heure vaut</label>
+          <input type="number" id="rate" value="45" min="10" max="500" step="5" inputmode="numeric">
+          <span class="unit">€ / h</span>
+        </div>
+      </div>
+
+      <div class="calc-right">
+        <p class="sr-only" id="srSummary" aria-live="polite"></p>
+        <div class="dial">
+          <div class="dial-empty" id="dialEmpty">
+            <span class="dash" aria-hidden="true">— h</span>
+            Ajoutez une première tâche. Celle qui vous vole vos soirées.
+          </div>
+          <div id="dialResults" hidden>
+            <div class="dial-row">
+              <div class="num"><span id="rHm">0</span><span class="u">h / mois</span></div>
+              <div class="lbl">temps récupéré</div>
+            </div>
+            <div class="dial-row">
+              <div class="num"><span id="rEm">0</span><span class="u">€ / mois</span></div>
+              <div class="lbl">valeur récupérée</div>
+            </div>
+            <!-- Bascule : le cadre gold se pose (usage gold 3/3) -->
+            <div class="verdict">
+              <p>Plus d'une demi-journée par semaine.<br>À ce niveau, ça vaut une vraie conversation.</p>
+            </div>
+            <p class="dial-sub">soit <span id="rHy">0</span> h et <span id="rEy">0</span> € par an</p>
+          </div>
+        </div>
+        <div class="calc-cta">
+          <a class="btn" id="mailtoCta" href="mailto:anthony@sovereign-ai.tech">Recevoir mon estimation</a>
+          <p class="note">plafonné à 90 % d'automatisation — il reste toujours du contrôle humain, et c'est voulu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ASSIST'OS ============ -->
+<section class="assistos reveal" aria-labelledby="assistos-title">
+  <div class="wrap">
+    <span class="seal">Sovereign Assist'OS — local-first</span>
+    <h2 id="assistos-title">Le logiciel que j'installe chez mes clients, je l'ai construit.</h2>
+    <p class="lede">
+      Assist'OS, c'est dix assistants métier — devis, SAV, factures, prospection, relances —
+      qui travaillent sur <em>vos</em> documents, sur <em>votre</em> machine.
+      Voici trente secondes de sa vie, image par image.
+    </p>
+
+    <div class="scene" id="scene">
+      <div class="panel">
+        <span class="p-tag">1 — Vos documents répondent</span>
+        <div class="doc" data-d="0">fiche-client-dupuy.md</div>
+        <div class="doc" data-d="1">garanties-fabricant.md</div>
+        <div class="doc" data-d="2">grille-tarifs-2026.md</div>
+        <p class="vault-note">retrouvés sur votre machine, par mots-clés — rien n'est envoyé sur un cloud</p>
+      </div>
+      <div class="panel">
+        <span class="p-tag">2 — La réponse se prépare</span>
+        <div class="mail">
+          <div class="m-meta">
+            <strong>À :</strong> m.dupuy@…<br>
+            <strong>Objet :</strong> Fuite vanne adoucisseur — prise en charge
+          </div>
+          <p class="ml" data-m="0">Bonjour M. Dupuy,</p>
+          <p class="ml" data-m="1">Votre adoucisseur est <em>encore sous garantie</em> (pose 03/2024).</p>
+          <p class="ml" data-m="2">La visite de diagnostic est <em>prise en charge : 0&nbsp;€</em>.</p>
+          <p class="ml" data-m="3">Je vous propose un passage jeudi entre 9h et 11h.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <span class="p-tag">3 — Vous gardez la main</span>
+        <div class="approve">
+          <div class="status" id="sceneStatus">préparation…</div>
+          <p class="hint">Le patron relit, corrige un mot, <strong>envoie</strong>. Rien ne part sans lui.</p>
+          <button type="button" class="replay" id="replayBtn">↻ Rejouer</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="scene-cap">Trente secondes au lieu d'un quart d'heure —
+      <span class="gold">et c'est vous qui avez appuyé sur envoyer.</span></p>
+
+    <div class="facts">
+      <div class="fact">
+        <span class="f-k">Dix assistants</span>
+        <p>Devis, SAV, factures, prospection, appels d'offres, subventions, recrutement, fournisseurs, réclamations, candidatures.</p>
+      </div>
+      <div class="fact">
+        <span class="f-k">Vos documents, chez vous</span>
+        <p>Vos procédures, garanties et tarifs — de simples fichiers texte — indexés et retrouvés sur votre machine. Aucun envoi vers un cloud.</p>
+      </div>
+      <div class="fact">
+        <span class="f-k">Votre validation, toujours</span>
+        <p>Chaque action engageante attend votre accord. C'est inscrit dans le moteur, pas dans une promesse.</p>
+      </div>
+      <div class="fact">
+        <span class="f-k">Sérieux vérifiable</span>
+        <p>Connexion Gmail / Outlook aux standards de sécurité actuels, sauvegardes chiffrées, 40 tests automatisés.</p>
+      </div>
+    </div>
+
+    <details class="curious">
+      <summary>Pour le lecteur curieux — sous le capot</summary>
+      <p>
+        Recherche documentaire locale en <code>SQLite FTS5</code> (mots-clés pondérés), avec
+        embeddings optionnels servis par <code>Ollama</code> — donc toujours en local.
+        OAuth <code>PKCE</code> pour Gmail et Microsoft. Les données venant de l'extérieur
+        (pages web, mails entrants) sont encadrées par des marqueurs de défiance et filtrées
+        contre l'injection de prompt avant d'approcher le modèle. Sauvegardes chiffrées
+        (<code>Fernet</code>). Le tout tourne sur <code>127.0.0.1</code> — votre machine, point.
+      </p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ AUTRES TRAVAUX ============ -->
+<section aria-labelledby="works-title" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Aussi sur l'établi</span>
+      <h2 id="works-title">Autres travaux</h2>
+    </div>
+    <div class="works">
+      <article class="work">
+        <h3>Cortex OS</h3>
+        <p>Orchestrateur multi-modèles local-first : les modèles les moins chers d'abord, les gros en dernier recours. ~12 500 lignes de Python, licence MIT, n'écoute que sur votre machine.</p>
+        <span class="w-meta">41 tests · CI · MIT</span>
+      </article>
+      <article class="work">
+        <h3><a href="https://github.com/anthonyoccelli33480-ctrl" rel="noopener">Trilogie Cerebras ↗</a></h3>
+        <p>flash-agents, mistral-bureau, devstral-lab — des dizaines d'agents une-tâche-un-résultat, publics sur GitHub.</p>
+        <span class="w-meta">open source</span>
+      </article>
+      <article class="work">
+        <h3>Cuore di Pizza</h3>
+        <p>Le cas fondateur : un food truck italien du Médoc, rendu visible localement et dans les moteurs de réponse.</p>
+        <span class="w-meta">cas client · GEO</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÉTHODE ============ -->
+<section aria-labelledby="method-title" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Comment on travaille</span>
+      <h2 id="method-title">Quatre étapes, dans cet ordre.</h2>
+    </div>
+    <div class="method">
+      <div class="step">
+        <span class="n">01</span>
+        <div><h3>On regarde où part le temps</h3><p>Une conversation, vos vraies journées. Pas d'audit à 40 pages.</p></div>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <div><h3>On chiffre ce qui est récupérable</h3><p>Tâche par tâche, honnêtement. Ce qui ne vaut pas le coup, je vous le dis.</p></div>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <div><h3>On installe, chez vous, ce qui l'automatise</h3><p>Sur vos machines, branché sur vos outils. Formation comprise, en français.</p></div>
+      </div>
+      <div class="step">
+        <span class="n">04</span>
+        <div><h3>Vous gardez la main sur tout</h3><p>Chaque envoi passe par vous. Vos données ne quittent pas l'entreprise.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact reveal" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="kicker">Contact</span>
+      <h2 id="contact-title">On en parle&nbsp;?</h2>
+    </div>
+    <div>
+      <div class="c-lines">
+        <div><span class="c-k">email</span><a href="mailto:anthony@sovereign-ai.tech">anthony@sovereign-ai.tech</a></div>
+        <div><span class="c-k">github</span><a href="https://github.com/anthonyoccelli33480-ctrl" rel="noopener">anthonyoccelli33480-ctrl</a></div>
+        <div><span class="c-k">zone</span>Gironde &amp; Médoc — à distance partout en France</div>
+      </div>
+      <!-- #calcom-slot : conteneur réservé pour l'intégration future Cal.com.
+           Prévu : embed inline Cal.com ("prendre rendez-vous"), à charger ici
+           sans toucher au reste de la page. Ne rien implémenter pour l'instant. -->
+      <div id="calcom-slot"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap f-row">
+    <span>Sovereign IA — Anthony Occelli · Médoc, Gironde</span>
+    <span>vos données restent chez vous</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ séquence d'entrée hero ============ */
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', load);
+} else { load(); }
+function load(){
+  requestAnimationFrame(function(){
+    document.documentElement.classList.add('is-loaded');
+  });
+  initJournal();
+  initReveals();
+  initRule();
+  initCalc();
+  initScene();
+}
+
+/* ============ journal de supervision (hero) ============ */
+function initJournal(){
+  var lines = document.querySelectorAll('#journal .jl');
+  if (!lines.length) return;
+  if (reduced) { for (var i=0;i<lines.length;i++) lines[i].classList.add('on'); return; }
+  var timers = [];
+  function cycle(){
+    for (var i=0;i<lines.length;i++) lines[i].classList.remove('on');
+    timers.forEach(clearTimeout); timers = [];
+    var plan = [[0,600],[1,2100],[2,3800],[3,6400]];
+    plan.forEach(function(p){
+      timers.push(setTimeout(function(){ lines[p[0]].classList.add('on'); }, p[1]));
+    });
+    timers.push(setTimeout(cycle, 11500));
+  }
+  cycle();
+}
+
+/* ============ reveals au scroll ============ */
+function initReveals(){
+  var els = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    for (var i=0;i<els.length;i++) els[i].classList.add('is-vis');
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('is-vis'); io.unobserve(e.target); }
+    });
+  }, {threshold:.12});
+  for (var j=0;j<els.length;j++) io.observe(els[j]);
+}
+
+/* ============ règle de mesure ============ */
+function initRule(){
+  var cur = document.getElementById('ruleCursor');
+  if (!cur || reduced) return;
+  var ticking = false;
+  function place(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var p = h > 0 ? window.scrollY / h : 0;
+    cur.style.top = (p * 100) + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){ ticking = true; requestAnimationFrame(place); }
+  }, {passive:true});
+  place();
+}
+
+/* ============ LE CALCULATEUR ============ */
+var tasks = []; // {id, name, hours, pct}
+var taskSeq = 0;
+var displayed = {hm:0, em:0, hy:0, ey:0}; // valeurs affichées (pour interpolation)
+var rafId = null;
+
+function initCalc(){
+  var form = document.getElementById('taskForm');
+  var input = document.getElementById('taskInput');
+  var suggests = document.getElementById('suggests');
+  var rate = document.getElementById('rate');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = input.value.trim();
+    if (!name) return;
+    addTask(name, 3, 50);
+    input.value = '';
+    input.focus();
+  });
+
+  suggests.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-task]');
+    if (!b || b.disabled) return;
+    addTask(b.dataset.task, 3, 60);
+    b.disabled = true;
+  });
+
+  rate.addEventListener('input', compute);
+}
+
+function addTask(name, hours, pct){
+  var id = ++taskSeq;
+  tasks.push({id:id, name:name, hours:hours, pct:Math.min(pct,90)});
+  renderTask(tasks[tasks.length-1]);
+  compute();
+}
+
+function renderTask(t){
+  var list = document.getElementById('taskList');
+  var el = document.createElement('div');
+  el.className = 'task';
+  el.dataset.id = t.id;
+  el.innerHTML =
+    '<div class="task-head">' +
+      '<span class="task-name"></span>' +
+      '<button type="button" class="task-del" aria-label="Retirer cette tâche">retirer ×</button>' +
+    '</div>' +
+    '<div class="task-controls">' +
+      '<div class="ctrl">' +
+        '<label for="h'+t.id+'">Heures / semaine <output id="oh'+t.id+'">'+fmtH(t.hours)+' h</output></label>' +
+        '<input type="range" id="h'+t.id+'" min="0" max="20" step="0.5" value="'+t.hours+'" ' +
+          'aria-valuetext="'+fmtH(t.hours)+' heures par semaine">' +
+      '</div>' +
+      '<div class="ctrl">' +
+        '<label for="p'+t.id+'">Automatisable <output id="op'+t.id+'">'+t.pct+' %</output></label>' +
+        '<input type="range" id="p'+t.id+'" min="0" max="90" step="5" value="'+t.pct+'" ' +
+          'aria-valuetext="'+t.pct+' pour cent">' +
+        '<div class="cap-note">plafonné à 90 % — il reste toujours du contrôle humain</div>' +
+      '</div>' +
+    '</div>';
+  el.querySelector('.task-name').textContent = t.name;
+
+  el.querySelector('#h'+t.id).addEventListener('input', function(){
+    t.hours = parseFloat(this.value);
+    this.setAttribute('aria-valuetext', fmtH(t.hours)+' heures par semaine');
+    document.getElementById('oh'+t.id).textContent = fmtH(t.hours)+' h';
+    compute();
+  });
+  el.querySelector('#p'+t.id).addEventListener('input', function(){
+    t.pct = Math.min(parseInt(this.value,10), 90);
+    this.setAttribute('aria-valuetext', t.pct+' pour cent');
+    document.getElementById('op'+t.id).textContent = t.pct+' %';
+    compute();
+  });
+  el.querySelector('.task-del').addEventListener('click', function(){
+    tasks = tasks.filter(function(x){ return x.id !== t.id; });
+    el.remove();
+    // réactiver la suggestion correspondante si c'en était une
+    var sug = document.querySelector('#suggests button[data-task="'+t.name+'"]');
+    if (sug) sug.disabled = false;
+    compute();
+  });
+
+  list.appendChild(el);
+}
+
+function fmtH(h){ return (Math.round(h*10)/10).toLocaleString('fr-FR'); }
+function fmtN(n){ return Math.round(n).toLocaleString('fr-FR'); }
+
+function compute(){
+  var rate = parseFloat(document.getElementById('rate').value) || 0;
+  var hWeek = 0;
+  tasks.forEach(function(t){ hWeek += t.hours * (Math.min(t.pct,90)/100); });
+  var hMonth = hWeek * 52 / 12;
+  var hYear  = hWeek * 52;
+  var eMonth = hMonth * rate;
+  var eYear  = hYear * rate;
+
+  var empty = document.getElementById('dialEmpty');
+  var res = document.getElementById('dialResults');
+  var has = tasks.length > 0;
+  empty.hidden = has;
+  res.hidden = !has;
+
+  // bascule : ≥ 4 h récupérées / semaine → le cadre gold se pose
+  var section = document.getElementById('calculateur');
+  section.classList.toggle('is-hot', hWeek >= 4);
+
+  animateTo({hm:hMonth, em:eMonth, hy:hYear, ey:eYear});
+  updateMailto(rate, hMonth, hYear, eMonth, eYear);
+
+  // annonce lecteur d'écran : une seule fois par calcul, valeurs finales
+  var sr = document.getElementById('srSummary');
+  if (sr) sr.textContent = has
+    ? 'Temps récupéré estimé : ' + fmtN(hMonth) + ' heures par mois, soit ' +
+      fmtN(eMonth) + ' euros par mois et ' + fmtN(eYear) + ' euros par an.'
+    : '';
+}
+
+/* compteurs interpolés — mono, tabular-nums, pas de tremblement */
+var snapTimer = null;
+function animateTo(target){
+  if (rafId) cancelAnimationFrame(rafId);
+  if (snapTimer) clearTimeout(snapTimer);
+  if (reduced){ displayed = target; paint(); return; }
+  var from = {hm:displayed.hm, em:displayed.em, hy:displayed.hy, ey:displayed.ey};
+  var t0 = null, DUR = 420;
+  // filet : si rAF est suspendu (onglet caché), on pose la valeur finale
+  snapTimer = setTimeout(function(){ displayed = target; paint(); }, DUR + 180);
+  function frame(ts){
+    if (!t0) t0 = ts;
+    var k = Math.min((ts - t0) / DUR, 1);
+    k = 1 - Math.pow(1 - k, 3); // ease-out cubic
+    displayed.hm = from.hm + (target.hm - from.hm) * k;
+    displayed.em = from.em + (target.em - from.em) * k;
+    displayed.hy = from.hy + (target.hy - from.hy) * k;
+    displayed.ey = from.ey + (target.ey - from.ey) * k;
+    paint();
+    if (k < 1) rafId = requestAnimationFrame(frame);
+  }
+  rafId = requestAnimationFrame(frame);
+}
+
+function paint(){
+  document.getElementById('rHm').textContent = fmtN(displayed.hm);
+  document.getElementById('rEm').textContent = fmtN(displayed.em);
+  document.getElementById('rHy').textContent = fmtN(displayed.hy);
+  document.getElementById('rEy').textContent = fmtN(displayed.ey);
+}
+
+/* CTA mailto pré-rempli — l'outil de qualification */
+function updateMailto(rate, hMonth, hYear, eMonth, eYear){
+  var cta = document.getElementById('mailtoCta');
+  if (!tasks.length){
+    cta.href = 'mailto:anthony@sovereign-ai.tech?subject=' +
+      encodeURIComponent('Estimation — temps récupérable');
+    return;
+  }
+  var NL = '\r\n';
+  var body = 'Bonjour Anthony,' + NL + NL +
+    'Voici mon estimation faite sur sovereign-ai.tech :' + NL + NL;
+  tasks.forEach(function(t){
+    body += '- ' + t.name + ' : ' + fmtH(t.hours) + ' h/sem, ' + t.pct + ' % automatisable' + NL;
+  });
+  body += NL +
+    'Total estimé : ' + fmtN(hMonth) + ' h/mois (' + fmtN(hYear) + ' h/an)' + NL +
+    'Valeur : ' + fmtN(eMonth) + ' €/mois (' + fmtN(eYear) + ' €/an, taux ' + fmtN(rate) + ' €/h)' + NL + NL +
+    'Mon activité : ' + NL +
+    'Mon téléphone (optionnel) : ' + NL;
+  cta.href = 'mailto:anthony@sovereign-ai.tech' +
+    '?subject=' + encodeURIComponent('Estimation — temps récupérable') +
+    '&body=' + encodeURIComponent(body);
+}
+
+/*
+ * submitEstimate() — POINT D'ACCROCHE UNIQUE pour le futur webhook n8n auto-hébergé.
+ * Aujourd'hui : rien (le CTA mailto fait le travail).
+ * Demain : POST du payload vers l'instance n8n pour
+ *   1. générer un PDF d'estimation,
+ *   2. créer la fiche prospect,
+ *   3. notifier Anthony.
+ * Brancher ici et UNIQUEMENT ici — ne pas disperser d'appels réseau ailleurs.
+ */
+function submitEstimate(){
+  var payload = {
+    tasks: tasks.map(function(t){ return {name:t.name, hoursPerWeek:t.hours, automatablePct:t.pct}; }),
+    hourlyRate: parseFloat(document.getElementById('rate').value) || 0,
+    computedAt: new Date().toISOString()
+  };
+  // TODO n8n : fetch('https://<votre-n8n>/webhook/estimate', {method:'POST', body: JSON.stringify(payload)})
+  return payload;
+}
+window.submitEstimate = submitEstimate; // exposé pour le branchement futur
+
+/* ============ LA SCÈNE ASSIST'OS ============ */
+function initScene(){
+  var scene = document.getElementById('scene');
+  if (!scene) return;
+  var docs = scene.querySelectorAll('.doc');
+  var mails = scene.querySelectorAll('.ml');
+  var status = document.getElementById('sceneStatus');
+  var timers = [];
+  var played = false;
+
+  function reset(){
+    timers.forEach(clearTimeout); timers = [];
+    for (var i=0;i<docs.length;i++) docs[i].classList.remove('lit');
+    for (var j=0;j<mails.length;j++) mails[j].classList.remove('on');
+    scene.classList.remove('st-wait','st-sent');
+    status.textContent = 'préparation…';
+  }
+
+  function finalState(){
+    reset();
+    for (var i=0;i<docs.length;i++) docs[i].classList.add('lit');
+    for (var j=0;j<mails.length;j++) mails[j].classList.add('on');
+    scene.classList.add('st-sent');
+    status.textContent = 'envoyé — validé par le patron';
+  }
+
+  function play(){
+    reset();
+    var t = 0;
+    // 1. le vault s'allume, document par document
+    [0,1,2].forEach(function(i){
+      t += 700;
+      timers.push(setTimeout(function(){ docs[i].classList.add('lit'); }, t));
+    });
+    // 2. le mail se compose, ligne par ligne
+    for (var m=0; m<mails.length; m++){
+      t += 850;
+      (function(mm){
+        timers.push(setTimeout(function(){ mails[mm].classList.add('on'); }, t));
+      })(m);
+    }
+    // 3. la machine s'arrête : en attente de validation
+    t += 900;
+    timers.push(setTimeout(function(){
+      scene.classList.add('st-wait');
+      status.textContent = 'en attente de validation';
+    }, t));
+    // 4. le patron tranche
+    t += 2400;
+    timers.push(setTimeout(function(){
+      scene.classList.remove('st-wait');
+      scene.classList.add('st-sent');
+      status.textContent = 'envoyé — validé par le patron';
+    }, t));
+  }
+
+  if (reduced){
+    finalState();
+    document.getElementById('replayBtn').hidden = true;
+    return;
+  }
+
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && !played){ played = true; play(); io.unobserve(scene); }
+      });
+    }, {threshold:.35});
+    io.observe(scene);
+  } else {
+    finalState();
+  }
+
+  document.getElementById('replayBtn').addEventListener('click', play);
+}
+
+})();
+</script>
+</body>
+</html>

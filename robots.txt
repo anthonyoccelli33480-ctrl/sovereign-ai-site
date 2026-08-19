@@ -1,0 +1,29 @@
+# Sovereign IA — sovereign-ai.tech
+# Tout le monde est bienvenu, y compris les crawlers des moteurs de réponse.
+
+User-agent: *
+Allow: /
+
+# Crawlers IA — explicitement autorisés
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+Sitemap: https://sovereign-ai.tech/sitemap.xml

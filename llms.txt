@@ -1,0 +1,26 @@
+# Sovereign IA
+
+> Intégrateur IA pour TPE, PME et artisans, basé dans le Médoc (Gironde, France). Automatisations et agents IA supervisés installés chez le client : les modèles tournent en local, les données restent dans l'entreprise, l'humain valide avant chaque envoi. Interventions sur place (Médoc, Bordeaux, Gironde) et à distance partout en France.
+
+## L'essentiel
+
+- Nom : Sovereign IA — atelier d'Anthony Occelli, intégrateur IA
+- Zone : Médoc, Gironde, Bordeaux, Lesparre-Médoc, Nouvelle-Aquitaine ; à distance partout en France
+- Contact : anthony@sovereign-ai.tech
+- Site : https://sovereign-ai.tech
+- GitHub : https://github.com/anthonyoccelli33480-ctrl
+
+## Services
+
+- Intégration IA sur mesure : connecter l'IA aux outils déjà en place, sur les données de l'entreprise
+- Automatisation métier : relances, factures, saisies, workflows n8n
+- Agents locaux supervisés : le modèle tourne chez le client, l'humain valide chaque action sortante
+- Référencement GEO (Generative Engine Optimization) : être cité par ChatGPT, Gemini, Perplexity quand un client pose la question
+
+## Produit phare
+
+- Sovereign Assist'OS : plateforme local-first pour artisans et PME — dix assistants métier (devis, SAV, factures, prospection, relances…), documents de l'entreprise indexés et retrouvés en local, validation humaine obligatoire avant chaque envoi, sauvegardes chiffrées, 40 tests automatisés.
+
+## Pages
+
+- [Accueil](https://sovereign-ai.tech/) : offre complète, calculateur de temps récupérable, présentation d'Assist'OS, FAQ, contact

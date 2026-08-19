@@ -22,27 +22,105 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://sovereign-ai.tech/#sovereign-ia",
   "name": "Sovereign IA",
-  "description": "Intégrateur IA pour TPE, PME et artisans : intégration IA sur mesure, automatisation métier, agents locaux supervisés et visibilité dans les moteurs de réponse (GEO). Les modèles tournent chez le client, les données restent chez lui, l'humain valide avant chaque envoi. Basé dans le Médoc, en Gironde — interventions sur place et à distance partout en France.",
+  "slogan": "L'IA utile. Les automatisations qui font avancer votre entreprise.",
+  "description": "Intégrateur IA pour TPE, PME et artisans : intégration IA sur mesure, automatisation métier, agents locaux supervisés et référencement GEO (visibilité dans les moteurs de réponse comme ChatGPT, Gemini ou Perplexity). Les modèles tournent chez le client, les données restent chez lui, l'humain valide avant chaque envoi. Basé dans le Médoc, en Gironde — interventions sur place autour de Bordeaux et Lesparre-Médoc, et à distance partout en France.",
   "url": "https://sovereign-ai.tech",
   "email": "anthony@sovereign-ai.tech",
   "founder": {
     "@type": "Person",
-    "name": "Anthony Occelli"
+    "name": "Anthony Occelli",
+    "jobTitle": "Intégrateur IA",
+    "sameAs": "https://github.com/anthonyoccelli33480-ctrl"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brach",
+    "postalCode": "33480",
+    "addressRegion": "Nouvelle-Aquitaine",
+    "addressCountry": "FR"
   },
   "areaServed": [
-    { "@type": "AdministrativeArea", "name": "Gironde" },
     { "@type": "AdministrativeArea", "name": "Médoc" },
+    { "@type": "AdministrativeArea", "name": "Gironde" },
+    { "@type": "City", "name": "Bordeaux" },
+    { "@type": "City", "name": "Lesparre-Médoc" },
+    { "@type": "AdministrativeArea", "name": "Nouvelle-Aquitaine" },
     { "@type": "Country", "name": "France" }
   ],
   "sameAs": [
     "https://github.com/anthonyoccelli33480-ctrl"
   ],
+  "serviceType": [
+    "Intégration IA sur mesure",
+    "Automatisation métier",
+    "Agents IA locaux supervisés",
+    "Référencement GEO (Generative Engine Optimization)"
+  ],
   "knowsAbout": [
     "intégration d'intelligence artificielle pour PME",
     "automatisation de tâches administratives pour artisans",
     "agents IA locaux supervisés",
-    "visibilité dans les moteurs de réponse (GEO)"
+    "visibilité dans les moteurs de réponse (GEO)",
+    "IA locale et souveraineté des données"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qui peut installer l'intelligence artificielle dans une TPE, PME ou entreprise artisanale en Gironde ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sovereign IA, l'atelier d'Anthony Occelli, intégrateur IA basé dans le Médoc, en Gironde. Il installe des automatisations et des agents IA supervisés directement chez les TPE, PME et artisans — sur place autour de Bordeaux, de Lesparre-Médoc et dans tout le Médoc, et à distance partout en France."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "C'est quoi, un intégrateur IA ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un artisan du logiciel qui branche l'intelligence artificielle sur les outils que vous utilisez déjà — devis, mails, factures, planning — au lieu de vous vendre un logiciel de plus. Il regarde où part votre temps, installe ce qui l'automatise, et vous forme à vous en servir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes données vont-elles partir dans le cloud ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. C'est le principe même de Sovereign IA : les modèles tournent sur vos machines, vos documents restent chez vous, et rien ne quitte l'entreprise sans votre validation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'IA va-t-elle envoyer des choses toute seule ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Les agents installés sont supervisés : ils préparent le travail — une réponse client, un devis, une relance — puis s'arrêtent. Vous relisez, vous corrigez si besoin, et c'est vous qui validez chaque envoi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment être recommandé par ChatGPT, Gemini ou Perplexity quand un client cherche mon métier ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "C'est le référencement GEO (Generative Engine Optimization) : structurer votre site et votre présence en ligne pour que les moteurs de réponse vous trouvent, vous comprennent et vous citent. Sovereign IA le met en place pour les entreprises de Gironde — c'est l'un de ses quatre terrains d'intervention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien ça coûte ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ça dépend de ce qu'on automatise — et c'est chiffré avant, jamais en cours de route. Le calculateur du site donne un ordre de grandeur de ce que vous pouvez récupérer ; le premier échange par mail est sans engagement."
+      }
+    }
   ]
 }
 </script>
@@ -549,6 +627,23 @@ input[type=range]::-moz-range-thumb{
 .step h3{margin-bottom:.35rem}
 .step p{font-size:.9rem;color:var(--ivory-dim)}
 
+/* ---- FAQ ---- */
+.faq{max-width:760px}
+.faq details{border-top:1px solid var(--hairline);padding:1.15rem 0}
+.faq details:last-child{border-bottom:1px solid var(--hairline)}
+.faq summary{
+  cursor:pointer;list-style:none;
+  font-family:var(--font-display);font-weight:700;font-size:1.02rem;
+  letter-spacing:-.01em;display:flex;gap:.9rem;align-items:baseline;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--cyan);font-family:var(--font-mono);flex:none}
+.faq details[open] summary::before{content:"−"}
+.faq details p{
+  margin-top:.8rem;padding-left:1.75rem;
+  font-size:.92rem;color:var(--ivory-dim);line-height:1.7;max-width:62ch;
+}
+
 /* ---- contact ---- */
 .contact{border-top:1px solid var(--hairline)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
@@ -869,6 +964,42 @@ footer .f-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap
         <span class="n">04</span>
         <div><h3>Vous gardez la main sur tout</h3><p>Chaque envoi passe par vous. Vos données ne quittent pas l'entreprise.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section aria-labelledby="faq-title" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">FAQ</span>
+      <h2 id="faq-title">Questions directes, réponses directes.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Qui peut installer l'intelligence artificielle dans une TPE, PME ou entreprise artisanale en Gironde&nbsp;?</summary>
+        <p>Sovereign IA, l'atelier d'Anthony Occelli, intégrateur IA basé dans le Médoc, en Gironde. Il installe des automatisations et des agents IA supervisés directement chez les TPE, PME et artisans — sur place autour de Bordeaux, de Lesparre-Médoc et dans tout le Médoc, et à distance partout en France.</p>
+      </details>
+      <details>
+        <summary>C'est quoi, un intégrateur IA&nbsp;?</summary>
+        <p>Un artisan du logiciel qui branche l'intelligence artificielle sur les outils que vous utilisez déjà — devis, mails, factures, planning — au lieu de vous vendre un logiciel de plus. Il regarde où part votre temps, installe ce qui l'automatise, et vous forme à vous en servir.</p>
+      </details>
+      <details>
+        <summary>Mes données vont-elles partir dans le cloud&nbsp;?</summary>
+        <p>Non. C'est le principe même de Sovereign IA : les modèles tournent sur vos machines, vos documents restent chez vous, et rien ne quitte l'entreprise sans votre validation.</p>
+      </details>
+      <details>
+        <summary>L'IA va-t-elle envoyer des choses toute seule&nbsp;?</summary>
+        <p>Non. Les agents installés sont supervisés : ils préparent le travail — une réponse client, un devis, une relance — puis s'arrêtent. Vous relisez, vous corrigez si besoin, et c'est vous qui validez chaque envoi.</p>
+      </details>
+      <details>
+        <summary>Comment être recommandé par ChatGPT, Gemini ou Perplexity quand un client cherche mon métier&nbsp;?</summary>
+        <p>C'est le référencement GEO (Generative Engine Optimization) : structurer votre site et votre présence en ligne pour que les moteurs de réponse vous trouvent, vous comprennent et vous citent. Sovereign IA le met en place pour les entreprises de Gironde — c'est l'un de ses quatre terrains d'intervention.</p>
+      </details>
+      <details>
+        <summary>Combien ça coûte&nbsp;?</summary>
+        <p>Ça dépend de ce qu'on automatise — et c'est chiffré avant, jamais en cours de route. Le calculateur en haut de page vous donne un ordre de grandeur de ce que vous pouvez récupérer ; le premier échange par mail est sans engagement.</p>
+      </details>
     </div>
   </div>
 </section>

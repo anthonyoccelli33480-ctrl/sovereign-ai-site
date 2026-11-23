@@ -3,27 +3,35 @@
 
 User-agent: *
 Allow: /
+Disallow: /guides/
 
 # Crawlers IA — explicitement autorisés
 User-agent: GPTBot
 Allow: /
+Disallow: /guides/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /guides/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /guides/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /guides/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /guides/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /guides/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /guides/
 
 Sitemap: https://sovereign-ai.tech/sitemap.xml
